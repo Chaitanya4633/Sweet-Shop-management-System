@@ -1,0 +1,4 @@
+com\sweetshop\sweetshop\repository\SweetRepository.class
+com\sweetshop\sweetshop\service\SweetService.class
+com\sweetshop\sweetshop\model\Sweet.class
+com\sweetshop\sweetshop\SweetshopApplication.class
