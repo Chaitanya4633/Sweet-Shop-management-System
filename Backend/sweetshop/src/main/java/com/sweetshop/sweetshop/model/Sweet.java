@@ -23,4 +23,9 @@ public class Sweet {
 
     public String getName() { return name; }
     public int getQuantity() { return quantity; }
+
+    public void decreaseQuantity(int amount) {
+    this.quantity -= amount;
+    }
+
 }
