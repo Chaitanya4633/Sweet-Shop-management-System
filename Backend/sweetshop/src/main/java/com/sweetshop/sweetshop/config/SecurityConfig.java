@@ -33,9 +33,13 @@ public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
             session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
         )
         .authorizeHttpRequests(auth -> auth
-            .requestMatchers("/h2-console/**").permitAll()
-            .anyRequest().authenticated()
-        )
+    .requestMatchers(
+        "/api/auth/**",      // ✅ allow register & login
+        "/h2-console/**"
+    ).permitAll()
+    .anyRequest().authenticated()
+)
+
         .headers(headers -> headers.frameOptions(frame -> frame.disable()))
         .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
 
