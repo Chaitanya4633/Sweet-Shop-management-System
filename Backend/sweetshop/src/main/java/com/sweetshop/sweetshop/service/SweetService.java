@@ -5,6 +5,8 @@ import com.sweetshop.sweetshop.model.Sweet;
 import com.sweetshop.sweetshop.repository.SweetRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class SweetService {
 
@@ -30,4 +32,9 @@ public class SweetService {
         sweet.decreaseQuantity(1);
         return sweetRepository.save(sweet);
     }
+
+    public List<Sweet> getAllSweets() {
+        return sweetRepository.findAll();
+    }
+
 }
