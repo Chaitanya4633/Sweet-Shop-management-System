@@ -143,22 +143,36 @@ Role detection is done by decoding the JWT token on the frontend.
 > 📌 **These screenshots demonstrate actual working features**
 
 ### 🔐 Login & JWT Generation (Postman)
-![JWT Token Generation](screenshots/login-token.png)
+<img width="1236" height="957" alt="Screenshot 2025-12-14 102045" src="https://github.com/user-attachments/assets/1f179498-eba4-4200-a6a2-127cdc8768c1" />
+<img width="1226" height="960" alt="Screenshot 2025-12-14 102223" src="https://github.com/user-attachments/assets/2d0084f4-4f94-4075-8452-a0e8f5aa1893" />
+
+
 
 ### 🍭 Fetching Sweets (Protected API)
-![Get Sweets](screenshots/get-sweets.png)
+<img width="1920" height="1080" alt="Screenshot 2025-12-14 121117" src="https://github.com/user-attachments/assets/326b1f04-2543-403e-a0ff-dfaca9152710" />
+<img width="1920" height="1080" alt="Screenshot 2025-12-14 133953" src="https://github.com/user-attachments/assets/4cead414-6d17-4503-9ee4-7179ac8731a0" />
+
 
 ### 🔍 Searching Sweets
 ![Search Sweets](screenshots/search.png)
+<img width="1920" height="1080" alt="Screenshot 2025-12-14 101009" src="https://github.com/user-attachments/assets/fb7ab79f-5f20-4590-b676-2b48bba5cf7d" />
+
 
 ### 🛠️ Admin Adding Sweet
-![Add Sweet](screenshots/add-sweet.png)
+<img width="1012" height="899" alt="Screenshot 2025-12-14 164124" src="https://github.com/user-attachments/assets/fd4d0f46-6da7-484d-877e-08376ab1d7a4" />
+
 
 ### 🗄️ Database (H2 Console)
-![H2 Database](screenshots/h2-database.png)
+<img width="1920" height="1080" alt="Screenshot 2025-12-14 133953" src="https://github.com/user-attachments/assets/4708f43e-18cb-43dd-8601-c219d5d2be5f" />
+<img width="1920" height="1080" alt="Screenshot 2025-12-14 134050" src="https://github.com/user-attachments/assets/49667ab7-68cf-44ec-b0bd-388987516f8a" />
+
+
 
 ### 🎨 Frontend UI
-![Frontend Dashboard](screenshots/frontend-dashboard.png)
+<img width="1920" height="1080" alt="Screenshot 2025-12-14 180748" src="https://github.com/user-attachments/assets/a5d26ed0-6bf7-4b1b-930e-79f21bb0cad3" />
+<img width="1532" height="618" alt="Screenshot 2025-12-14 154114" src="https://github.com/user-attachments/assets/3a9475c8-1ce8-46cd-a490-50f371405241" />
+
+
 
 ---
 
