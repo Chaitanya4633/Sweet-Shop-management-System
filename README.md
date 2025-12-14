@@ -1,215 +1,170 @@
-📦 Sweet Shop Management System 🍬
+# 🍬 Sweet Shop Management System  
+**TDD Kata – Full-Stack Application**
 
-AI Kata – Full Stack Assignment
+---
 
-A full-stack Sweet Shop Management System built using Spring Boot and React, implementing JWT-based authentication, secure REST APIs, search functionality, and inventory purchase flow, following modern development practices.
+## 📌 Project Overview
 
-🚀 Project Objective
+The **Sweet Shop Management System** is a full-stack web application developed as part of the **AI Kata – Sweet Shop Management System** assignment.
 
-The goal of this project is to design, build, and test a full-stack Sweet Shop Management System that demonstrates:
+The goal of this project is to **design, build, test, and document** a production-style application that demonstrates:
 
-Backend API design
+- RESTful API design
+- JWT-based authentication & authorization
+- Database integration
+- Modern frontend development
+- Role-based access control (Admin / User)
+- Test-Driven Development (TDD)
+- Clean coding practices
+- Responsible and transparent AI usage
 
-Authentication & authorization using JWT
+This project was implemented using **Java (Spring Boot)** for the backend and **React** for the frontend.
 
-Database integration
+---
 
-Frontend UI with API integration
+## 🎯 Project Objective
 
-Clean code practices
+The objective of this project is to design and implement a **secure, scalable, and testable** Sweet Shop Management System that allows:
 
-Git workflow
+- Users to browse and purchase sweets
+- Admins to manage sweets and inventory
+- Secure access to protected resources using JWT
+- Clear separation of concerns between backend and frontend
 
-Responsible AI usage
+---
 
-This project was implemented as part of the AI Kata – Sweet Shop Management System assignment.
+## 🧱 Tech Stack
 
-🧩 Tech Stack
-Backend
+### 🔧 Backend
+- Java 17
+- Spring Boot
+- Spring Security
+- JWT (JSON Web Tokens)
+- Spring Data JPA
+- Hibernate
+- H2 Database (runtime)
+- Maven
+- JUnit 5
 
-Java 17
+### 🎨 Frontend
+- React
+- JavaScript (ES6+)
+- Fetch API
+- CSS (Responsive UI)
 
-Spring Boot
+---
 
-Spring Security
+## 🔐 Authentication & Authorization
 
-JWT (JSON Web Tokens)
+### Implemented Features
+- User registration (`/api/auth/register`)
+- User login (`/api/auth/login`)
+- JWT token generation on successful login
+- Stateless authentication using JWT
+- Role-based access:
+  - **USER**: Can view, search, and purchase sweets
+  - **ADMIN**: Can add, update, delete, and restock sweets
 
-Spring Data JPA
+JWT is stored on the frontend and attached to API requests using the `Authorization: Bearer <token>` header.
 
-H2 Database (runtime)
+---
 
-Maven
+## 📡 Backend API Endpoints
 
-Frontend
+### 🔑 Auth APIs
+| Method | Endpoint | Description |
+|------|---------|-------------|
+| POST | `/api/auth/register` | Register a new user |
+| POST | `/api/auth/login` | Login and receive JWT token |
 
-React
+---
 
-JavaScript (ES6+)
+### 🍭 Sweets APIs (Protected)
 
-Fetch API
+| Method | Endpoint | Access | Description |
+|------|---------|--------|-------------|
+| GET | `/api/sweets` | User/Admin | Get all sweets |
+| GET | `/api/sweets/search` | User/Admin | Search sweets by name |
+| POST | `/api/sweets` | Admin | Add new sweet |
+| PUT | `/api/sweets/{id}` | Admin | Update sweet |
+| DELETE | `/api/sweets/{id}` | Admin | Delete sweet |
+| POST | `/api/sweets/{id}/purchase` | User | Purchase sweet |
+| POST | `/api/sweets/{id}/restock` | Admin | Restock sweet |
 
-CSS
+Each sweet contains:
+- `id`
+- `name`
+- `category`
+- `price`
+- `quantity`
 
-🔐 Authentication & Security
+---
 
-Users can register and log in
+## 🧪 Test-Driven Development (TDD)
 
-JWT token is generated on successful login
+This project follows **Test-Driven Development principles**, especially for backend business logic.
 
-Token is required to access protected APIs
+### Implemented Tests
+- SweetService unit tests
+- Purchase logic validation
+- Inventory update tests
+- Repository interaction tests
 
-Stateless authentication (no server sessions)
+### TDD Flow Followed
+1. **Red** – Write failing test
+2. **Green** – Implement minimal logic to pass
+3. **Refactor** – Improve code quality
 
-Passwords are stored securely using BCrypt hashing
+---
 
-📡 Backend API Endpoints
-🔓 Auth APIs
-Method	Endpoint	Description
-POST	/api/auth/register	Register a new user
-POST	/api/auth/login	Login and receive JWT
-🔒 Sweets APIs (Protected)
-Method	Endpoint	Description
-GET	/api/sweets	Get all sweets
-GET	/api/sweets/search?q=	Search sweets by name
-POST	/api/sweets	Add a new sweet
-DELETE	/api/sweets/{id}	Delete a sweet
-POST	/api/sweets/{id}/buy	Purchase a sweet (decrease quantity)
+## 🖥️ Frontend Application
 
-Each sweet has:
+### Features Implemented
 
-id
+#### 👤 User View
+- Login & Logout
+- View all sweets
+- Search sweets
+- Purchase sweets
+- Buy button disabled when quantity = 0
 
-name
+#### 🛠️ Admin View
+- Add new sweets
+- Delete sweets
+- Restock sweets
+- Admin UI visible only for ADMIN role
 
-category
+Role detection is done by decoding the JWT token on the frontend.
 
-price
+---
 
-quantity
+## 📷 Screenshots (Proof of Implementation)
 
-🖥️ Frontend Features
+> 📌 **These screenshots demonstrate actual working features**
 
-User Login screen
+### 🔐 Login & JWT Generation (Postman)
+![JWT Token Generation](screenshots/login-token.png)
 
-JWT stored securely in browser
+### 🍭 Fetching Sweets (Protected API)
+![Get Sweets](screenshots/get-sweets.png)
 
-View all sweets
+### 🔍 Searching Sweets
+![Search Sweets](screenshots/search.png)
 
-Search sweets by name
+### 🛠️ Admin Adding Sweet
+![Add Sweet](screenshots/add-sweet.png)
 
-Buy sweets (quantity decreases)
+### 🗄️ Database (H2 Console)
+![H2 Database](screenshots/h2-database.png)
 
-Logout functionality
+### 🎨 Frontend UI
+![Frontend Dashboard](screenshots/frontend-dashboard.png)
 
-Protected routes (cannot access without login)
+---
 
-🧪 Testing
+## ⚙️ How to Run Locally
 
-Backend service logic tested using JUnit
-
-Service-level tests follow Red → Green → Refactor approach
-
-Manual API verification using Postman
-
-Application behavior validated end-to-end
-
-🗂️ Project Structure
-Sweet Shop Management System
-│
-├── Backend/
-│   └── sweetshop/
-│       ├── controller/
-│       ├── service/
-│       ├── repository/
-│       ├── model/
-│       ├── config/
-│       └── test/
-│
-└── Frontend/
-    └── myapp/
-        ├── src/
-        │   ├── pages/
-        │   ├── api/
-        │   ├── Sweets.js
-        │   └── App.js
-
-▶️ How to Run Locally
-Backend
+### Backend
+```bash
 cd Backend/sweetshop
 mvn spring-boot:run
-
-
-Backend runs on:
-
-http://localhost:8080
-
-Frontend
-cd Frontend/myapp
-npm install
-npm start
-
-
-Frontend runs on:
-
-http://localhost:3000
-
-📸 Screenshots
-
-✔ Login successful
-✔ Sweets list displayed
-✔ Search functionality
-✔ Buy button updates quantity
-✔ Logout working
-
-(Screenshots can be added if required)
-
-🤖 My AI Usage (MANDATORY SECTION)
-AI Tools Used
-
-ChatGPT
-
-How AI Was Used
-
-Generated initial boilerplate for controllers and services
-
-Helped debug Spring Security & JWT issues
-
-Assisted in structuring React components
-
-Helped reason through authentication and API integration errors
-
-Reflection
-
-AI significantly accelerated debugging and learning.
-However, all logic decisions, integration fixes, and final implementations were understood, validated, and corrected manually.
-
-AI was used as a pair-programming assistant, not as a copy-paste solution.
-
-🧠 Key Learnings
-
-Implementing JWT authentication end-to-end
-
-Debugging Spring Security filters
-
-Handling protected routes in React
-
-Managing state across frontend and backend
-
-Importance of clean Git history and incremental commits
-
-📌 Deliverables Checklist (Client PDF)
-
-✅ Backend REST API
-✅ JWT Authentication
-✅ Database integration
-✅ Frontend SPA
-✅ Search functionality
-✅ Purchase flow
-✅ Git repository
-✅ README documentation
-✅ AI usage disclosure
-
-🏁 Final Note
-
-This project reflects real-world debugging, integration challenges, and problem-solving, not a tutorial copy.
